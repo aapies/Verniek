@@ -73,24 +73,6 @@ with center:
     st.markdown('<div class="title-container">⚽ WELKOM MEIDEN ⚽</div>', unsafe_allow_html=True)
     st.markdown('<p class="tagline">IK BEN DE SPELLETJESKING</p>', unsafe_allow_html=True)
 
-    # --- AUDIO PLAYBACK CONTROL ---
-    if 'audio_playing' not in st.session_state:
-        st.session_state.audio_playing = False
-
-    audio_url = "https://raw.githubusercontent.com/aapies/Verniek/main/06%20Uchida's%20Theme.mp3"
-    
-    if st.session_state.audio_playing:
-        button_label = 'Pause Theme Music'
-    else:
-        button_label = 'Play Theme Music'
-
-    # Button to toggle play/pause
-    if st.button(button_label):
-        st.session_state.audio_playing = not st.session_state.audio_playing
-
-    # Display the audio player only when audio is playing
-    if st.session_state.audio_playing:
-        st.audio(audio_url, format='audio/mp3', start_time=0)
 
     # --- SESSION STATE ---
     if "messages" not in st.session_state:
