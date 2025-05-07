@@ -1,6 +1,7 @@
 # --- SESSION STATE INIT ---
-if "started" not in st.session_state:
-    st.session_state.started = False
+with center:
+    if "started" not in st.session_state:
+        st.session_state.started = False
 
 # --- CENTER COLUMN ---
 with center:
