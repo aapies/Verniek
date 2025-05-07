@@ -7,6 +7,26 @@ openai.api_key = st.secrets.get("openai_api_key")
 # --- PAGE SETUP ---
 st.set_page_config(page_title="SPELLETJES MASTER✨", page_icon="🌍", layout="wide")
 
+# --- AUDIO PLAYBACK CONTROL ---
+if 'audio_playing' not in st.session_state:
+    st.session_state.audio_playing = True  # Start with audio playing by default
+
+audio_url = "https://raw.githubusercontent.com/aapies/Verniek/main/06%20Uchida's%20Theme.mp3"
+
+# Define the button label based on audio state
+if st.session_state.audio_playing:
+    button_label = 'Pause Theme Music'
+else:
+    button_label = 'Play Theme Music'
+
+# Button to toggle play/pause
+if st.button(button_label):
+    st.session_state.audio_playing = not st.session_state.audio_playing
+
+# Display the audio player and start the audio immediately (autoplay) when audio is playing
+if st.session_state.audio_playing:
+    st.audio(audio_url, format='audio/mp3', start_time=0)
+
 # --- CUSTOM STYLING ---
 st.markdown("""
     <style>
