@@ -36,23 +36,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- LAYOUT ---
-left, center, right = st.columns([1.2, 2.5, 1.2])
-
-# --- LEFT COLUMN ---
-with left:
-    st.image("https://upload.wikimedia.org/wikipedia/commons/6/6e/Football_%28soccer_ball%29.svg", use_container_width=True)
-    st.markdown('<div class="caption">Football vibes ⚽</div>', unsafe_allow_html=True)
-
-    st.image("https://upload.wikimedia.org/wikipedia/commons/5/57/Imagen_de_los_canales_conc%C3%A9ntricos_en_%C3%81msterdam.png", use_container_width=True)
-    st.markdown('<div class="caption">Greetings from Amsterdam 🇳🇱</div>', unsafe_allow_html=True)
-
-# --- CENTER COLUMN ---
-with center:
-    st.markdown('<div class="title-container">⚽ WELKOM MEIDEN ⚽</div>', unsafe_allow_html=True)
-    st.markdown('<p class="tagline">IK BEN DE SPELLETJESKING</p>', unsafe_allow_html=True)
-
-    # --- CUSTOM STYLING ---
+# --- CUSTOM STYLING ---
 st.markdown("""
     <style>
         /* Hide the audio controls */
@@ -69,7 +53,23 @@ st.markdown("""
         Your browser does not support the audio element.
     </audio>
 """, unsafe_allow_html=True)
-    
+
+# --- LAYOUT ---
+left, center, right = st.columns([1.2, 2.5, 1.2])
+
+# --- LEFT COLUMN ---
+with left:
+    st.image("https://upload.wikimedia.org/wikipedia/commons/6/6e/Football_%28soccer_ball%29.svg", use_container_width=True)
+    st.markdown('<div class="caption">Football vibes ⚽</div>', unsafe_allow_html=True)
+
+    st.image("https://upload.wikimedia.org/wikipedia/commons/5/57/Imagen_de_los_canales_conc%C3%A9ntricos_en_%C3%81msterdam.png", use_container_width=True)
+    st.markdown('<div class="caption">Greetings from Amsterdam 🇳🇱</div>', unsafe_allow_html=True)
+
+# --- CENTER COLUMN ---
+with center:
+    st.markdown('<div class="title-container">⚽ WELKOM MEIDEN ⚽</div>', unsafe_allow_html=True)
+    st.markdown('<p class="tagline">IK BEN DE SPELLETJESKING</p>', unsafe_allow_html=True)
+
     # --- SESSION STATE ---
     if "messages" not in st.session_state:
         st.session_state.messages = [
