@@ -58,6 +58,13 @@ with center:
     st.markdown('<div class="title-container">⚽ WELKOM MEIDEN ⚽</div>', unsafe_allow_html=True)
     st.markdown('<p class="tagline">IK BEN DE SPELLETJESKING</p>', unsafe_allow_html=True)
 
+    st.markdown("""
+<audio autoplay controls>
+  <source src="https://raw.githubusercontent.com/aapies/Verniek/main/06%20Uchida's%20Theme.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+""", unsafe_allow_html=True)
+    
     # --- SESSION STATE ---
     if "messages" not in st.session_state:
         st.session_state.messages = [
