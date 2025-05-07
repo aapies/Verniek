@@ -61,6 +61,44 @@ with center:
     st.markdown('<div class="title-container">⚽ WELKOM MEIDEN ⚽</div>', unsafe_allow_html=True)
     st.markdown('<p class="tagline">IK BEN DE SPELLETJESKING</p>', unsafe_allow_html=True)
 
+    # --- AUDIO PLAYER (Hidden) ---
+    st.markdown("""
+    <audio id="audio" autoplay>
+      <source src="https://raw.githubusercontent.com/aapies/Verniek/main/06%20Uchida's%20Theme.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    """, unsafe_allow_html=True)
+
+    # --- PLAY/PAUSE BUTTON ---
+    play_button = st.button('Play/Pause Theme Music')
+
+    # --- JAVASCRIPT FOR CONTROL ---
+    st.markdown("""
+    <script>
+        var audio = document.getElementById('audio');
+        var button = document.getElementById('play-button');
+        
+        // Play or pause the audio when the button is clicked
+        function togglePlayPause() {
+            if (audio.paused) {
+                audio.play();
+                button.innerHTML = 'Pause Theme Music';
+            } else {
+                audio.pause();
+                button.innerHTML = 'Play Theme Music';
+            }
+        }
+        
+        // Attach the function to the button
+        document.getElementById('play-button').addEventListener('click', togglePlayPause);
+    </script>
+    """, unsafe_allow_html=True)
+
+    # The button below
+    st.markdown('<div style="text-align:center;">', unsafe_allow_html=True)
+    st.button('Play Theme Music', key="play-button")
+    st.markdown('</div>', unsafe_allow_html=True)
+
     # --- SESSION STATE ---
     if "messages" not in st.session_state:
         st.session_state.messages = [
