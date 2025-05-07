@@ -52,34 +52,23 @@ with center:
     st.markdown('<div class="title-container">⚽ WELKOM MEIDEN ⚽</div>', unsafe_allow_html=True)
     st.markdown('<p class="tagline">IK BEN DE SPELLETJESKING</p>', unsafe_allow_html=True)
 
-    # --- AUDIO PLAYER (Hidden) ---
-    st.markdown("""
-    <audio id="audio" autoplay>
-      <source src="https://raw.githubusercontent.com/aapies/Verniek/main/06%20Uchida's%20Theme.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
+    # --- CUSTOM STYLING ---
+st.markdown("""
+    <style>
+        /* Hide the audio controls */
+        audio {
+            display: none;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+# --- PLAY AUDIO IN THE BACKGROUND ---
+st.markdown("""
+    <audio autoplay loop>
+        <source src="https://raw.githubusercontent.com/aapies/Verniek/main/06%20Uchida's%20Theme.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
     </audio>
-    """, unsafe_allow_html=True)
-
-    # --- PLAY/PAUSE BUTTON ---
-    if 'is_playing' not in st.session_state:
-        st.session_state.is_playing = True  # Set initial state to playing
-    
-    button_label = 'Pause Theme Music' if st.session_state.is_playing else 'Play Theme Music'
-
-    # Button to control play/pause
-    if st.button(button_label, key="toggle_audio"):
-        st.session_state.is_playing = not st.session_state.is_playing
-        # Add JavaScript to play/pause the audio
-        st.markdown("""
-        <script>
-            var audio = document.getElementById('audio');
-            if(audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
-            }
-        </script>
-        """, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
     
     # --- SESSION STATE ---
     if "messages" not in st.session_state:
