@@ -9,8 +9,8 @@ st.set_page_config(page_title="SPELLETJES MASTER✨", page_icon="🌍", layout="
 
 # --- AUTOPLAY AUDIO ---
 st.markdown("""
-<audio>
-  <source src="https://github.com/aapies/Verniek/blob/main/06%20Uchida's%20Theme.mp3" type="audio/mpeg">
+<audio autoplay controls>
+  <source src="https://raw.githubusercontent.com/aapies/Verniek/blob/main/06%20Uchida's%20Theme.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 """, unsafe_allow_html=True)
