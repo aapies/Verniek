@@ -25,7 +25,23 @@ if st.button(button_label):
 
 # Display the audio player and start the audio immediately (autoplay) when audio is playing
 if st.session_state.audio_playing:
-    st.audio(audio_url, format='audio/mp3', start_time=0)
+    st.markdown(f"""
+        <audio id="audio_player" autoplay>
+            <source src="{audio_url}" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <script>
+            // Autoplay when the page loads
+            document.getElementById('audio_player').play();
+        </script>
+    """, unsafe_allow_html=True)
+else:
+    # Pause the audio using JavaScript when paused
+    st.markdown("""
+        <script>
+            document.getElementById('audio_player').pause();
+        </script>
+    """, unsafe_allow_html=True)
 
 # --- CUSTOM STYLING ---
 st.markdown("""
