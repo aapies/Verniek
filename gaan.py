@@ -7,7 +7,41 @@ openai.api_key = st.secrets.get("openai_api_key")
 # --- PAGE SETUP ---
 st.set_page_config(page_title="SPELLETJES MASTER✨", page_icon="🌍", layout="wide")
 
+# --- AUDIO PLAYBACK CONTROL ---
+if 'audio_playing' not in st.session_state:
+    st.session_state.audio_playing = True  # Start with audio playing by default
 
+audio_url = "https://raw.githubusercontent.com/aapies/Verniek/main/06%20Uchida's%20Theme.mp3"
+
+# Define the button label based on audio state
+if st.session_state.audio_playing:
+    button_label = 'Pause Theme Music'
+else:
+    button_label = 'Play Theme Music'
+
+# Button to toggle play/pause
+if st.button(button_label):
+    st.session_state.audio_playing = not st.session_state.audio_playing
+
+# Display the audio player and start the audio immediately (autoplay) when audio is playing
+if st.session_state.audio_playing:
+    st.markdown(f"""
+        <audio id="audio_player" autoplay>
+            <source src="{audio_url}" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        <script>
+            // Autoplay when the page loads
+            document.getElementById('audio_player').play();
+        </script>
+    """, unsafe_allow_html=True)
+else:
+    # Pause the audio using JavaScript when paused
+    st.markdown("""
+        <script>
+            document.getElementById('audio_player').pause();
+        </script>
+    """, unsafe_allow_html=True)
 
 # --- CUSTOM STYLING ---
 st.markdown("""
@@ -54,42 +88,6 @@ with left:
 with center:
     st.markdown('<div class="title-container">⚽ WELKOM MEIDEN ⚽</div>', unsafe_allow_html=True)
     st.markdown('<p class="tagline">IK BEN DE SPELLETJESKING</p>', unsafe_allow_html=True)
-
-    # --- AUDIO PLAYBACK CONTROL ---
-if 'audio_playing' not in st.session_state:
-    st.session_state.audio_playing = True  # Start with audio playing by default
-
-audio_url = "https://raw.githubusercontent.com/aapies/Verniek/main/06%20Uchida's%20Theme.mp3"
-
-# Define the button label based on audio state
-if st.session_state.audio_playing:
-    button_label = 'Pause Theme Music'
-else:
-    button_label = 'Play Theme Music'
-
-# Button to toggle play/pause
-if st.button(button_label):
-    st.session_state.audio_playing = not st.session_state.audio_playing
-
-# Display the audio player and start the audio immediately (autoplay) when audio is playing
-if st.session_state.audio_playing:
-    st.markdown(f"""
-        <audio id="audio_player" autoplay>
-            <source src="{audio_url}" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
-        <script>
-            // Autoplay when the page loads
-            document.getElementById('audio_player').play();
-        </script>
-    """, unsafe_allow_html=True)
-else:
-    # Pause the audio using JavaScript when paused
-    st.markdown("""
-        <script>
-            document.getElementById('audio_player').pause();
-        </script>
-    """, unsafe_allow_html=True)
 
 
     # --- SESSION STATE ---
