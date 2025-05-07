@@ -61,7 +61,7 @@ with center:
     """, unsafe_allow_html=True)
 
     # --- PLAY/PAUSE BUTTON ---
-    play_button = st.button('Play/Pause Theme Music')
+    # play_button = st.button('Play/Pause Theme Music')
 
     # --- JAVASCRIPT FOR CONTROL ---
     st.markdown("""
