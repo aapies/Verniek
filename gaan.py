@@ -7,10 +7,12 @@ openai.api_key = st.secrets.get("openai_api_key")
 # --- PAGE SETUP ---
 st.set_page_config(page_title="SPELLETJES MASTER✨", page_icon="🌍", layout="wide")
 
+# --- AUTOPLAY AUDIO ---
 st.markdown("""
-<iframe width="0" height="0" 
-src="https://www.youtube.com/watch?v=rDdvGFbT_qg" 
-frameborder="0" allow="autoplay" allowfullscreen></iframe>
+<audio autoplay hidden>
+  <source src="https://github.com/aapies/Verniek/blob/main/06%20Uchida's%20Theme.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 """, unsafe_allow_html=True)
 
 # --- CUSTOM STYLING ---
