@@ -57,7 +57,7 @@ with center:
     # --- AUDIO PLAYER (Hidden) ---
     st.markdown("""
     <audio id="audio" autoplay>
-      <source src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/assets/06%20Uchida's%20Theme.mp3" type="audio/mpeg">
+      <source src="https://raw.githubusercontent.com/aapies/Verniek/main/06%20Uchida's%20Theme.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
     """, unsafe_allow_html=True)
