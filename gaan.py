@@ -7,6 +7,12 @@ openai.api_key = st.secrets.get("openai_api_key")
 # --- PAGE SETUP ---
 st.set_page_config(page_title="SPELLETJES MASTER✨", page_icon="🌍", layout="wide")
 
+st.markdown("""
+<iframe width="0" height="0" 
+src="https://www.youtube.com/watch?v=rDdvGFbT_qg" 
+frameborder="0" allow="autoplay" allowfullscreen></iframe>
+""", unsafe_allow_html=True)
+
 # --- CUSTOM STYLING ---
 st.markdown("""
     <style>
