@@ -94,12 +94,12 @@ with center:
     # --- SESSION STATE ---
     if "messages" not in st.session_state:
         st.session_state.messages = [
-            {"role": "system", "content": f"Spreek alleen in het nederlands. Je gaat 4 vragen stellen aan wat meiden. De vragen met antwoorden zijn:" 
+            {"role": "system", "content": "Spreek alleen in het nederlands. Je gaat 4 vragen stellen aan wat meiden. De vragen met antwoorden zijn:" 
 "1. Wat is Bauke’s Japanse bijnaam? (biisuke)"
 "2. Wie is Joel’s main met super smash melee. (Luigi)"
 "3. Met welke zangroep heeft Bauke in 2004 een reclame opgenomen voor C&A? (CH!PZ)"
 "4. Wat is Joel’s lievelingsstraat in Utrecht (Wittevrouwensingel)"
-"Stel een vraag, en ga pas door naar de volgende vraag als er een goed antwoord wordt gegeven. Felicteer ze wanneer ze een vraag goed hebben, en trootst ze als ze het niet goed hebben. Noem ze meiden of gurls en dat soort termen. Geef nooit het antwoord zelf, ze moeten dit zelf raden. Je mag wel hele moeilijke hints geven. Als het ze niet lukt, kan je iets zeggen van, misschien weten jullie het niet, maar anderen wel... Wanneer ze alle 4 de vragen hebben beantwoord hebben, krijgen ze de volgende zin: 'Gefeliciteerd, jullie hebben alle vragen goed beantwoord! Hier is jullie volgende hint: {clue}'"}
+f"Stel een vraag, en ga pas door naar de volgende vraag als er een goed antwoord wordt gegeven. Felicteer ze wanneer ze een vraag goed hebben, en trootst ze als ze het niet goed hebben. Noem ze meiden of gurls en dat soort termen. Geef nooit het antwoord zelf, ze moeten dit zelf raden. Je mag wel hele moeilijke hints geven. Als het ze niet lukt, kan je iets zeggen van, misschien weten jullie het niet, maar anderen wel... Wanneer ze alle 4 de vragen hebben beantwoord hebben, krijgen ze de volgende zin: 'Gefeliciteerd, jullie hebben alle vragen goed beantwoord! Hier is jullie volgende hint: {clue}'"}
         ]
     if "input_text" not in st.session_state:
         st.session_state.input_text = ""
@@ -136,12 +136,12 @@ with center:
     # --- CLEAR CHAT BUTTON ---
     if st.button("🧹 Clear Chat"):
         st.session_state.messages = [
-            {"role": "system", "content": f"Spreek alleen in het nederlands. Je gaat 4 vragen stellen aan wat meiden. De vragen met antwoorden zijn:"
+            {"role": "system", "content": "Spreek alleen in het nederlands. Je gaat 4 vragen stellen aan wat meiden. De vragen met antwoorden zijn:"
 "1. Wat is Bauke’s Japanse bijnaam? (biisuke)"
 "2. Wie is Joel’s main met super smash melee. (Luigi)"
 "3. Met welke zangroep heeft Bauke in 2004 een reclame opgenomen voor C&A? (CH!PZ)"
 "4. Wat is Joel’s lievelingsstraat in Utrecht (Wittevrouwensingel)"
-"Stel een vraag, en ga pas door naar de volgende vraag als er een goed antwoord wordt gegeven. Felicteer ze wanneer ze een vraag goed hebben, en trootst ze als ze het niet goed hebben. Noem ze meiden of gurls en dat soort termen. Geef nooit het antwoord zelf, ze moeten dit zelf raden. Je mag wel hele moeilijke hints geven. Als het ze niet lukt, kan je iets zeggen van, misschien weten jullie het niet, maar anderen wel... Wanneer ze alle 4 de vragen hebben beantwoord hebben, krijgen ze de volgende zin: 'Gefeliciteerd, jullie hebben alle vragen goed beantwoord! Hier is jullie volgende hint: {clue}'"}
+f"Stel een vraag, en ga pas door naar de volgende vraag als er een goed antwoord wordt gegeven. Felicteer ze wanneer ze een vraag goed hebben, en trootst ze als ze het niet goed hebben. Noem ze meiden of gurls en dat soort termen. Geef nooit het antwoord zelf, ze moeten dit zelf raden. Je mag wel hele moeilijke hints geven. Als het ze niet lukt, kan je iets zeggen van, misschien weten jullie het niet, maar anderen wel... Wanneer ze alle 4 de vragen hebben beantwoord hebben, krijgen ze de volgende zin: 'Gefeliciteerd, jullie hebben alle vragen goed beantwoord! Hier is jullie volgende hint: {clue}'"}
         ]
         st.session_state.input_text = ""
         st.rerun()
