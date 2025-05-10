@@ -98,7 +98,7 @@ with center:
 "2. Wie is Joel’s main met super smash melee. (Luigi)"
 "3. Met welke zangroep heeft Bauke in 2004 een reclame opgenomen voor C&A? (CH!PZ)"
 "4. Wat is Joel’s lievelingsstraat in Utrecht (Wittevrouwensingel)"
-"Stel een vraag, en ga pas door naar de volgende vraag als er een goed antwoord wordt gegeven. Felicteer ze wanneer ze een vraag goed hebben, en trootst ze als ze het niet goed hebben. Noem ze meiden of gurls en dat soort termen. Geef nooit het antwoord zelf, ze moeten dit zelf raden. Je mag wel hele moeilijke hints geven. Wanneer ze alle 4 de vragen hebben beantwoord hebben, krijgen ze de volgende zin: 'Gefeliciteerd, jullie hebben alle vragen goed beantwoord! Hier is jullie volgende hint: Diazbrug.'"}
+"Stel een vraag, en ga pas door naar de volgende vraag als er een goed antwoord wordt gegeven. Felicteer ze wanneer ze een vraag goed hebben, en trootst ze als ze het niet goed hebben. Noem ze meiden of gurls en dat soort termen. Geef nooit het antwoord zelf, ze moeten dit zelf raden. Je mag wel hele moeilijke hints geven. Als het ze niet lukt, kan je iets zeggen van, misschien weten jullie het niet, maar anderen wel... Wanneer ze alle 4 de vragen hebben beantwoord hebben, krijgen ze de volgende zin: 'Gefeliciteerd, jullie hebben alle vragen goed beantwoord! Hier is jullie volgende hint: Diazbrug.'"}
         ]
     if "input_text" not in st.session_state:
         st.session_state.input_text = ""
@@ -140,7 +140,7 @@ with center:
 "2. Wie is Joel’s main met super smash melee. (Luigi)"
 "3. Met welke zangroep heeft Bauke in 2004 een reclame opgenomen voor C&A? (CH!PZ)"
 "4. Wat is Joel’s lievelingsstraat in Utrecht (Wittevrouwensingel)"
-"Stel een vraag, en ga pas door naar de volgende vraag als er een goed antwoord wordt gegeven. Felicteer ze wanneer ze een vraag goed hebben, en trootst ze als ze het niet goed hebben. Noem ze meiden of gurls en dat soort termen. Geef nooit het antwoord zelf, ze moeten dit zelf raden. Je mag wel hele moeilijke hints geven. Wanneer ze alle 4 de vragen hebben beantwoord hebben, krijgen ze de volgende zin: 'Gefeliciteerd, jullie hebben alle vragen goed beantwoord! Hier is jullie volgende hint: Diazbrug.'"}
+"Stel een vraag, en ga pas door naar de volgende vraag als er een goed antwoord wordt gegeven. Felicteer ze wanneer ze een vraag goed hebben, en trootst ze als ze het niet goed hebben. Noem ze meiden of gurls en dat soort termen. Geef nooit het antwoord zelf, ze moeten dit zelf raden. Je mag wel hele moeilijke hints geven. Als het ze niet lukt, kan je iets zeggen van, misschien weten jullie het niet, maar anderen wel... Wanneer ze alle 4 de vragen hebben beantwoord hebben, krijgen ze de volgende zin: 'Gefeliciteerd, jullie hebben alle vragen goed beantwoord! Hier is jullie volgende hint: Diazbrug.'"}
         ]
         st.session_state.input_text = ""
         st.rerun()
