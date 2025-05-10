@@ -112,12 +112,16 @@ f"Stel een vraag, en ga pas door naar de volgende vraag als er een goed antwoord
             st.markdown(f"<div class='custom-box ai-msg'>🤖 AI: {msg['content']}</div>", unsafe_allow_html=True)
 
     # --- TEXT INPUT & SUBMIT ---
-    st.session_state.input_text = st.text_area("✍️ Enter your message below:", st.session_state.input_text)
+    if "input_text" not in st.session_state:
+        st.session_state.input_text = ""
+    
+    # Show the input area
+    user_input = st.text_area("✍️ Enter your message below:", st.session_state.input_text, key="input_text")
 
     if st.button("💬 Submit"):
         user_input = st.session_state.input_text.strip()
         if user_input:
-            with st.spinner("⚙️ Generating response..."):
+            with st.spinner("1 seconde..."):
                 try:
                     st.session_state.messages.append({"role": "user", "content": user_input})
                     response = openai.ChatCompletion.create(
