@@ -4,7 +4,6 @@ import streamlit as st
 openai.api_key = st.secrets.get("openai_api_key")
 clue = st.secrets.get("clue")
 
-
 # --- PAGE SETUP ---
 st.set_page_config(page_title="SPELLETJES MASTER✨", page_icon="🌍", layout="wide")
 
