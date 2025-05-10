@@ -111,15 +111,15 @@ f"Stel een vraag, en ga pas door naar de volgende vraag als er een goed antwoord
         elif msg["role"] == "assistant":
             st.markdown(f"<div class='custom-box ai-msg'>🤖 AI: {msg['content']}</div>", unsafe_allow_html=True)
 
-    # --- TEXT INPUT & SUBMIT ---
+       # --- TEXT INPUT & SUBMIT ---
     if "input_text" not in st.session_state:
         st.session_state.input_text = ""
     
     # Show the input area
     user_input = st.text_area("✍️ Enter your message below:", st.session_state.input_text, key="input_text")
-
+    
     if st.button("💬 Submit"):
-        user_input = st.session_state.input_text.strip()
+        user_input = user_input.strip()
         if user_input:
             with st.spinner("1 seconde..."):
                 try:
@@ -130,12 +130,14 @@ f"Stel een vraag, en ga pas door naar de volgende vraag als er een goed antwoord
                     )
                     response_text = response.choices[0].message["content"].strip()
                     st.session_state.messages.append({"role": "assistant", "content": response_text})
-                    st.session_state.input_text = ""  # Clear input
+                    # Clear input text
+                    st.session_state.input_text = ""
                     st.rerun()
                 except Exception as e:
                     st.error(f"Error: {str(e)}")
         else:
             st.warning("Please enter a message before submitting.")
+
 
     # --- CLEAR CHAT BUTTON ---
     if st.button("🧹 Clear Chat"):
