@@ -87,7 +87,8 @@ with left:
 # --- CENTER COLUMN ---
 with center:
     st.markdown('<div class="title-container">⚽ WELKOM MEIDEN ⚽</div>', unsafe_allow_html=True)
-    st.markdown('<p class="tagline">IK BEN DE SPELLETJESKING</p>', unsafe_allow_html=True)
+    st.markdown('<p class="tagline">It's a boys world....</p>', unsafe_allow_html=True)
+    st.markdown('<p class="tagline">Antwoord mijn vragen goed, en vind geluk...</p>', unsafe_allow_html=True)
 
 
     # --- SESSION STATE ---
